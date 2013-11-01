@@ -20,6 +20,17 @@
  * cpu do in one micro second.
 */
 #define BOARD_TICKSPERMICROSECOND        BOARD_CPUFREQUENCY/1000000
+
+
+/** TODO: Move to hal.h */
+/* 
+ * Direction of port pins
+*/
+#define HAL_PINOUTPUT   1
+#define HAL_PININPUT    0
+
+
+
    
 /*******************| Type definitions |*******************************/
 
