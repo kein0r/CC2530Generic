@@ -43,6 +43,14 @@
 #define ledInit()       P1DIR_0 = HAL_PINOUTPUT;
 #define ledOn()         P1_0 = HAL_LOW;
 #define ledOff()        P1_0 = HAL_HIGH;
+   
+/**
+ * For easier reading of clock settings
+*/
+#define CLKCONCMD_OSC32K_XOSC                           0x00
+#define CLKCONCMD_OSC32K_RCOSC                          0x80
+#define CLKCONCMD_OSC_XOSC                              0x00
+#define CLKCONCMD_OSC_RCOSC                             0x40
 
 /**
 * For easier access of the direction bits
@@ -57,6 +65,7 @@ SFRBIT( P1DIRbits      ,  0xFE, P1DIR_7, P1DIR_6, P1DIR_5, P1DIR_4, P1DIR_3, P1D
 /*******************| Global variables |*******************************/
 
 /*******************| Function prototypes |****************************/
+void Board_init();
 void delay_us(uint16 usec);
 
 #endif
