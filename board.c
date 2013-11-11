@@ -3,7 +3,7 @@
 void Board_init()
 {
   /* wait some time for the osc to stabilize */
-  for (i=0; i<504; i++) nop();
+  for (int i=0; i<504; i++) nop();
   /* enable external OSC */
   CLKCONCMD = (CLKCONCMD_OSC32K_XOSC | CLKCONCMD_OSC_XOSC);
   /* wait until both clocks has stabilized */
@@ -20,7 +20,16 @@ void delay_us(uint16 usec)
     {
         nop();nop();nop();nop();nop();nop();nop();nop();nop();nop();
         nop();nop();nop();nop();nop();nop();nop();nop();nop();nop();
-        nop();nop();nop();nop();nop();nop();nop();nop();nop();nop();
-        nop();nop();
+        /* nop();nop();nop();nop();nop();nop();nop();nop();nop();nop();
+        nop();nop();*/
+    }
+}
+
+void delay_ms(uint16 usec)
+{
+    
+    while(usec--)
+    {
+      delay_us(1000);
     }
 }

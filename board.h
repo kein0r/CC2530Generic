@@ -21,7 +21,8 @@
  * Number of cpu cycles per nanoseconds. Thus, how many cycles does the
  * cpu do in one micro second.
 */
-#define BOARD_TICKSPERMICROSECOND        BOARD_CPUFREQUENCY/1000000
+//#define BOARD_TICKSPERMICROSECOND        BOARD_CPUFREQUENCY/1000000
+#define BOARD_TICKSPERMICROSECOND        20
 
 
 /** TODO: Move to hal.h */
@@ -67,6 +68,7 @@ SFRBIT( P1DIRbits      ,  0xFE, P1DIR_7, P1DIR_6, P1DIR_5, P1DIR_4, P1DIR_3, P1D
 /*******************| Function prototypes |****************************/
 void Board_init();
 void delay_us(uint16 usec);
+void delay_ms(uint16 usec);
 
 #endif
 
