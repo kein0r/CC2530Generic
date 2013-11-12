@@ -53,6 +53,20 @@
 #define CLKCONCMD_OSC_XOSC                              0x00
 #define CLKCONCMD_OSC_RCOSC                             0x40
 
+/** 
+ * Macros for enabling/disabling all or one particular interrupt
+*/
+#define enableInterrupt(reg, bit) reg |= bit
+#define disableInterrupt(reg, bit) reg &= ~bit
+#define enableAllInterrupt() enableInterrupt(IEN0, IEN0_EA)
+#define disableAllInterrupt() disableInterrupt(IEN0, IEN0_EA)
+
+/**
+ * Macro to clear interrupt flag. See swru191c.pdf Chapter 2.5.1 why interrupt 
+ * flags are cleared as follows.
+*/
+#define clearInterruptFlag(reg, bit) reg = ~bit
+
 /**
 * For easier access of the direction bits
 */
