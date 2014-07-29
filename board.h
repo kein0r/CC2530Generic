@@ -10,7 +10,6 @@
 #include <ioCC2530.h>
    
 /*******************| Macros |*****************************************/
-#define nop()  asm("NOP")
 
 /**
  * Frequency of the MCU in Hz
@@ -44,14 +43,6 @@
 #define ledInit()       P1DIR_0 = HAL_PINOUTPUT;
 #define ledOn()         P1_0 = HAL_LOW;
 #define ledOff()        P1_0 = HAL_HIGH;
-   
-/**
- * For easier reading of clock settings
-*/
-#define CLKCONCMD_OSC32K_XOSC                           0x00
-#define CLKCONCMD_OSC32K_RCOSC                          0x80
-#define CLKCONCMD_OSC_XOSC                              0x00
-#define CLKCONCMD_OSC_RCOSC                             0x40
 
 /** 
  * Macros for enabling/disabling all or one particular interrupt

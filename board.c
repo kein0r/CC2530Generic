@@ -1,13 +1,12 @@
 #include "board.h"
+#include <CC253x.h>
 
 void Board_init()
 {
   /* wait some time for the osc to stabilize */
   for (int i=0; i<504; i++) nop();
-  /* enable external OSC */
-  CLKCONCMD = (CLKCONCMD_OSC32K_XOSC | CLKCONCMD_OSC_XOSC);
-  /* wait until both clocks has stabilized */
-  while (CLKCONSTA != CLKCONCMD) ;
+  /* Init MCU, external 32MHz and 32KHz oscilator, 32MHz counter tick speed, clock speed 32MHz */
+  CC253x_Init(CLKCONCMD_OSC_XOSC + CLKCONCMD_OSC32K_XOSC, CLKCONCMD_TICKSPD_32MHZ, CLKCONCMD_CLKSPD_32MHz);
 }
 
 /**
