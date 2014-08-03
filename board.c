@@ -6,7 +6,7 @@ void Board_init()
   /* wait some time for the osc to stabilize */
   for (int i=0; i<504; i++) nop();
   /* Init MCU, external 32MHz and 32KHz oscilator, 32MHz counter tick speed, clock speed 32MHz */
-  CC253x_Init(CLKCONCMD_OSC_XOSC + CLKCONCMD_OSC32K_XOSC, CLKCONCMD_TICKSPD_32MHZ, CLKCONCMD_CLKSPD_32MHz);
+  CC253x_Init(CLKCONCMD_OSC_XOSC | CLKCONCMD_OSC32K_XOSC | CLKCONCMD_TICKSPD_32MHZ | CLKCONCMD_CLKSPD_32MHz);
 }
 
 /**
