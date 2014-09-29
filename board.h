@@ -28,14 +28,14 @@
 /* 
  * Direction of port pins
 */
-#define HAL_PINOUTPUT   (uint8)1
-#define HAL_PININPUT    (uint8)0
+#define HAL_PINOUTPUT   (uint8_t)1
+#define HAL_PININPUT    (uint8_t)0
 
 /** 
  * Logic level of pins
 */
-#define HAL_HIGH        (uint8)1
-#define HAL_LOW         (uint8)0
+#define HAL_HIGH        (uint8_t)1
+#define HAL_LOW         (uint8_t)0
 
 /** 
 * LED connected to P1_0
@@ -72,8 +72,8 @@ SFRBIT( P1DIRbits      ,  0xFE, P1DIR_7, P1DIR_6, P1DIR_5, P1DIR_4, P1DIR_3, P1D
 
 /*******************| Function prototypes |****************************/
 void Board_init();
-void delay_us(uint16 usec);
-void delay_ms(uint16 usec);
+void delay_us(uint16_t usec);
+void delay_ms(uint16_t usec);
 
 #endif
 
