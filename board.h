@@ -41,8 +41,8 @@
 * LED connected to P1_0
 */
 #define ledInit()       P1DIR_0 = HAL_PINOUTPUT;
-#define ledOn()         P1_0 = HAL_LOW;
-#define ledOff()        P1_0 = HAL_HIGH;
+#define ledOn()         P1_0 = HAL_HIGH;
+#define ledOff()        P1_0 = HAL_LOW;
 
 /** 
  * Macros for enabling/disabling all or one particular interrupt
