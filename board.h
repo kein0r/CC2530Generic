@@ -47,6 +47,7 @@
 /** 
  * Macros for enabling/disabling all or one particular interrupt
 */
+#define IEN0_EA         0x80
 #define enableInterrupt(reg, bit) reg |= bit
 #define disableInterrupt(reg, bit) reg &= ~bit
 #define enableAllInterrupt() enableInterrupt(IEN0, IEN0_EA)
