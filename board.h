@@ -6,7 +6,7 @@
 
 /*******************| Inclusions |*************************************/
 #include <PlatformTypes.h>
-/** TODO: to be removed when hal parts are moved to own file */
+/** @todo to be removed when hal parts are moved to own file */
 #include <ioCC2530.h>
    
 /*******************| Macros |*****************************************/
@@ -24,7 +24,7 @@
 #define BOARD_TICKSPERMICROSECOND        20
 
 
-/** TODO: Move to hal.h */
+/** @todo Move to hal.h */
 /* 
  * Direction of port pins
 */
