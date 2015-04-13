@@ -23,26 +23,12 @@
 //#define BOARD_TICKSPERMICROSECOND        BOARD_CPUFREQUENCY/1000000
 #define BOARD_TICKSPERMICROSECOND        20
 
-
-/** @todo Move to hal.h */
-/* 
- * Direction of port pins
-*/
-#define HAL_PINOUTPUT   (uint8_t)1
-#define HAL_PININPUT    (uint8_t)0
-
-/** 
- * Logic level of pins
-*/
-#define HAL_HIGH        (uint8_t)1
-#define HAL_LOW         (uint8_t)0
-
 /** 
 * LED connected to P1_0
 */
-#define ledInit()       P1DIR_0 = HAL_PINOUTPUT;
-#define ledOn()         P1_0 = HAL_LOW;
-#define ledOff()        P1_0 = HAL_HIGH;
+#define ledInit()       P1DIR_0 = Px_PINOUTPUT;
+#define ledOn()         P1_0 = Px_LOW;
+#define ledOff()        P1_0 = Px_HIGH;
 
 /** 
  * Macros for enabling/disabling all or one particular interrupt
