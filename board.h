@@ -29,29 +29,6 @@
 #define ledInit()       P1DIR_0 = Px_PINOUTPUT;
 #define ledOn()         P1_0 = Px_LOW;
 #define ledOff()        P1_0 = Px_HIGH;
-
-/** 
- * Macros for enabling/disabling all or one particular interrupt
-*/
-#define IEN0_EA         0x80
-#define enableInterrupt(reg, bit) reg |= bit
-#define disableInterrupt(reg, bit) reg &= ~bit
-#define enableAllInterrupt() enableInterrupt(IEN0, IEN0_EA)
-#define disableAllInterrupt() disableInterrupt(IEN0, IEN0_EA)
-
-/**
- * Macro to clear interrupt flag. See swru191c.pdf Chapter 2.5.1 why interrupt 
- * flags are cleared as follows.
-*/
-#define clearInterruptFlag(reg, bit) reg = ~bit
-
-/**
-* For easier access of the direction bits
-*/
-/* Port 0                                                                           */
-SFRBIT( P0DIRbits      ,  0xFD, P0DIR_7, P0DIR_6, P0DIR_5, P0DIR_4, P0DIR_3, P0DIR_2, P0DIR_1, P0DIR_0 )
-/* Port 1                                                                           */
-SFRBIT( P1DIRbits      ,  0xFE, P1DIR_7, P1DIR_6, P1DIR_5, P1DIR_4, P1DIR_3, P1DIR_2, P1DIR_1, P1DIR_0 )
    
 /*******************| Type definitions |*******************************/
 
